@@ -1,0 +1,34 @@
+
+----------------------------------------------------------------------------------------------------
+ANE設定
+
+FireBaseでまずアプリを登録
+
+Core の ANE を作成
+
+
+https://github.com/myflashlab/common-dependencies-ANEからダウンロード
+
+
+.\libs\firebaseCore.ane
+.\libs\firebaseMessaging.ane
+.\libs\overrideAir.ane
+.\libs\overrideAirSim.ane
+
+Coreの設定を抽出して掲載
+
+----------------------------------------------------------------------------------------------------
+FireBase初期化
+https://firebase.google.com/docs/cloud-messaging/ios/client?hl=ja
+
+
+----------------------------------------------------------------------------------------------------
+2019-04-17 16:14:07
+
+ld: framework not found FirebaseMessaging
+ld: framework not found FirebaseMessaging
+Compilation failed while executing : ld64
+adt FAILED.
+
+
+32.0.0.116

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<application xmlns="http://ns.adobe.com/air/application/30.0">
+
+	<id>test</id>
+	<versionNumber>1.0</versionNumber>
+	<filename>test</filename>
+
+	<name>test</name>
+	<description></description>
+	<copyright></copyright>
+
+	<initialWindow>
+		<title>test</title>
+		<content>test.swf</content>
+		<systemChrome>standard</systemChrome>
+		<transparent>false</transparent>
+		<visible>true</visible>
+		<minimizable>true</minimizable>
+		<maximizable>true</maximizable>
+		<resizable>true</resizable>
+	</initialWindow>
+
+<android>
+	<manifestAdditions>
+		<manifest android:installLocation="auto">
+			<application>
+
+				<!--
+					Other settings required by the Firebase core or other ANEs...
+				-->
+
+				<!-- Required by firebase_messaging.ane -->
+				<service android:name="com.myflashlab.firebase.fcm.MyFirebaseMessagingService">
+					<intent-filter>
+						<action android:name="com.google.firebase.MESSAGING_EVENT"/>
+					</intent-filter>
+				</service>
+				<activity
+					android:name="com.myflashlab.firebase.fcm.MyFirebaseMessagingIntent"
+					android:theme="@style/Theme.Transparent"
+					android:exported="false"
+					android:noHistory="true"
+					android:clearTaskOnLaunch="true"
+					android:hardwareAccelerated="false"
+					android:stateNotNeeded="true">
+					<intent-filter>
+						<action android:name="MY_INTENT" />
+						<category android:name="android.intent.category.DEFAULT" />
+					</intent-filter>
+				</activity>
+
+			</application>
+		</manifest>
+	</manifestAdditions>
+</android>
+
+
+
+<iPhone>
+	<InfoAdditions>
+
+		<!--
+			Other settings required by the Firebase core or other ANEs...
+		-->
+
+		<!-- Required by firebase_messaging.ane -->
+		<key>UIBackgroundModes</key>
+		<array>
+			<string>remote-notification</string>
+		</array>
+
+	</InfoAdditions>
+
+	<requestedDisplayResolution>high</requestedDisplayResolution>
+
+	<Entitlements>
+
+		<!--
+			Open your *.mobileprovision file with a text editor and find
+			the Entitlements tag. copy it all here like the sample below.
+
+			BUT, make sure you are reading the comments below to know what
+			you have to change when you are trying to build for adhoc or
+			distribution vs development mode.
+		-->
+
+		<key>keychain-access-groups</key>
+		<array>
+			<string>57AX1RU6SZ.*</string>
+		</array>
+
+		<!--
+			set to 'true' when debugging your app and set to 'false' when
+			building for adhoc or distribution.
+		-->
+		<key>get-task-allow</key>
+		<true/>
+
+		<key>application-identifier</key>
+		<string>57AX1RU6SZ.your.app.package.name</string>
+		<key>com.apple.developer.team-identifier</key>
+		<string>57AX1RU6SZ</string>
+
+		<!--
+			set to 'development' when debugging your app and set to
+			'production' when building for adhoc or distribution.
+		-->
+		<key>aps-environment</key>
+		<string>development</string>
+
+		<!--
+			Apple has silently added this key which is required ONLY
+			when you are trying to upload your binary to itunesconnect
+		-->
+		<!--<key>beta-reports-active</key>
+		<false/>-->
+
+	</Entitlements>
+
+</iPhone>
+
+<extensions>
+
+	<!--
+		Required ANEs for the Firebase Core ANE comes here first.
+		https://github.com/myflashlab/Firebase-ANE/wiki/A.4.-Initialize-Firebase-in-your-app
+	-->
+
+	<!-- To support Firebase FCM -->
+	<extensionID>com.myflashlab.air.extensions.firebase.fcm</extensionID>
+
+	<!--
+		Download the dependency ANEs from https://github.com/myflashlab/common-dependencies-ANE
+		These dependencies are not required on the iOS side.
+	-->
+	<extensionID>com.myflashlab.air.extensions.dependency.firebase.messaging</extensionID>
+
+</extensions>
+
+</application>

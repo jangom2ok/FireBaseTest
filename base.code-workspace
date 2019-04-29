@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"air": true,
+			"obj": true,
+			"bin": true,
+			"extension": true,
+			"utils": true,
+		},
+		"search.exclude": {
+			"extension": true,
+			"obj": true,
+			"utils": true,
+			"bin": true,
+			"air": true
+		},
+	},
+}

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application xmlns="http://ns.adobe.com/air/application/25.0">
+	<id>Sharin</id>
+	<versionLabel/>
+	<versionNumber>1.0.0</versionNumber>
+	<filename>Sharin</filename>
+	<description/>
+	<name>Sharin</name>
+	<initialWindow>
+		<title>Sharin</title>
+		<content>Sharin.swf</content>
+		<systemChrome>standard</systemChrome>
+		<transparent>false</transparent>
+		<visible>true</visible>
+		<minimizable>true</minimizable>
+		<maximizable>true</maximizable>
+		<resizable>true</resizable>
+	</initialWindow>
+	<supportedProfiles>extendedDesktop</supportedProfiles>
+	<!--
+	<extensions>
+		<extensionID>com.genesi.desktop.ScreenShooter</extensionID>
+	</extensions>
+	-->
+</application>
