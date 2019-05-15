@@ -42,7 +42,7 @@
 			<string>1</string>
 		</array>
 
-		<!-- 
+		<!--
 			Required by firebaseInvites.ane
 			Change google client id to your own. Find it in GoogleService-Info.plist
 		-->
@@ -120,6 +120,5 @@
 		<extensionID>com.myflashlab.air.extensions.firebase.fcm</extensionID>
 		<extensionID>com.myflashlab.air.extensions.dependency.firebase.messaging</extensionID>
 		<extensionID>com.myflashlab.air.extensions.badge</extensionID>
-
 	</extensions>
 </application>

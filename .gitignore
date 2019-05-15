@@ -27,3 +27,5 @@ obj/
 
 !web/bin/
 assets/windows/vc_redist.x86.exe
+
+GoogleService-Info.plist

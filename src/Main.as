@@ -30,7 +30,7 @@ package
 	import com.myflashlab.air.extensions.firebase.fcm.*;
 	import com.myflashlab.air.extensions.dependency.OverrideAir;
 
-	//import com.myflashlab.air.extensions.badge.Badge;
+	import com.myflashlab.air.extensions.badge.Badge;
 
 	/**
 	 * ...
@@ -53,6 +53,8 @@ package
 			NativeApplication.nativeApplication.addEventListener(Event.DEACTIVATE, handleDeactivate);
 			NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, onInvoke);
 			NativeApplication.nativeApplication.addEventListener(KeyboardEvent.KEY_DOWN, handleKeys);
+
+			NativeApplication.nativeApplication.executeInBackground = true;
 
 			stage.addEventListener(Event.RESIZE, onResize);
 			stage.scaleMode = StageScaleMode.NO_SCALE;
@@ -106,10 +108,12 @@ package
 					C.log(name + " = " + payload[name]);
 				}
 				C.log("---------------------------------");
+				Badge.value = 2;
 			}
 			else
 			{
 				C.log("invoke payload is null.");
+				Badge.value = 3;
 			}
 		}
 
@@ -328,8 +332,7 @@ package
 			}
 
 			// to write a new badge value
-			_count++;
-			//Badge.value = _count;
+			Badge.value = 1;
 		}
 
 
